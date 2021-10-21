@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Little Prince</string>
+    <string name="TODO">TODO</string>
+    <string name="Morning">Утро</string>
+    <string name="Day">День</string>
+    <string name="Evening">Вечер</string>
+    <string name="Night">Ночь</string>
+</resources>
