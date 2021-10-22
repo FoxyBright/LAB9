@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
                 NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 String id = "my_channel_01";
+
+
                 CharSequence name = getString(R.string.channel_name);
                 String description = getString(R.string.channel_description);
                 int importance = NotificationManager.IMPORTANCE_LOW;
