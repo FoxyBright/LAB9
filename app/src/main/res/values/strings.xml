@@ -5,4 +5,7 @@
     <string name="Day">День</string>
     <string name="Evening">Вечер</string>
     <string name="Night">Ночь</string>
+    <string name="channel_name">ИМЯ</string>
+    <string name="channel_description">JGBCFBT\\</string>
+
 </resources>
