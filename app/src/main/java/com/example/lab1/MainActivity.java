@@ -8,6 +8,8 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +17,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SoundPool.OnLoadCompleteListener{
 
 
     private Button Night, Evening, Day, Morning, Prince, Planet, Rose, Volcano, Breakfast;
@@ -24,15 +26,11 @@ public class MainActivity extends AppCompatActivity {
     private ConstraintLayout layoutDay;
     private ConstraintLayout layoutEvening;
     private ConstraintLayout layoutNight;
-
     private int Time = 1;
+    private SoundPool mSoundPool;
+    private int mClapSound;
 
-    //Hi privet
-
-
-
-
-
+    @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         Volcano = findViewById(R.id.Volcano);
         Breakfast = findViewById(R.id.Breakfast);
 
+        mSoundPool = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
+        mSoundPool.setOnLoadCompleteListener(this);
+
+        mClapSound = mSoundPool.load(this, R.raw.knock, 1);
+
         Morning.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
@@ -67,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 layoutNight.setVisibility(View.INVISIBLE);
 
                 Time = 1;
+
+                mSoundPool.play(mClapSound, 1,1,0,0,1);
 
                 NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 String id = "my_channel_01";
@@ -105,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Time = 2;
 
+                mSoundPool.play(mClapSound, 1,1,0,0,1);
+
                 NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 String id = "my_channel_01";
                 CharSequence name = getString(R.string.channel_name);
@@ -139,6 +146,8 @@ public class MainActivity extends AppCompatActivity {
                 layoutNight.setVisibility(View.INVISIBLE);
 
                 Time = 3;
+
+                mSoundPool.play(mClapSound, 1,1,0,0,1);
 
                 NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 String id = "my_channel_01";
@@ -175,6 +184,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Time = 4;
 
+                mSoundPool.play(mClapSound, 1,1,0,0,1);
+
                 NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 String id = "my_channel_01";
                 CharSequence name = getString(R.string.channel_name);
@@ -202,6 +213,7 @@ public class MainActivity extends AppCompatActivity {
         Prince.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mSoundPool.play(mClapSound, 1,1,0,0,1);
                 if (Time == 1){
                     Toast.makeText(MainActivity.this, "Маленький принц", Toast.LENGTH_SHORT).show();
                 }
@@ -214,6 +226,7 @@ public class MainActivity extends AppCompatActivity {
         Planet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mSoundPool.play(mClapSound, 1,1,0,0,1);
                 Toast.makeText(MainActivity.this, "Астероид Б-612. Планета на которой живет Маленький принц", Toast.LENGTH_SHORT).show();
             }
         });
@@ -221,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
         Rose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mSoundPool.play(mClapSound, 1,1,0,0,1);
                 if (Time == 1){
                     Toast.makeText(MainActivity.this, "Роза. Ее нужно поливать, а на ночь укрывать ширмой и колпаком", Toast.LENGTH_SHORT).show();
                 }
@@ -233,6 +247,7 @@ public class MainActivity extends AppCompatActivity {
         Breakfast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mSoundPool.play(mClapSound, 1,1,0,0,1);
                 if (Time == 1){
                     Toast.makeText(MainActivity.this, "Действующий вулкан. На нем удобно разогревать завтрак", Toast.LENGTH_SHORT).show();
                 }
@@ -245,6 +260,7 @@ public class MainActivity extends AppCompatActivity {
         Volcano.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mSoundPool.play(mClapSound, 1,1,0,0,1);
                 if (Time == 1){
                     Toast.makeText(MainActivity.this, "Потухший вулкан. О нем тоже нужно заботиться", Toast.LENGTH_SHORT).show();
                 }
@@ -255,4 +271,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onLoadComplete(SoundPool soundPool, int sampled, int status){
+
+    }
 }
