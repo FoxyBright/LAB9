@@ -13,15 +13,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private Button Night, Evening, Day, Morning;
+    private Button Night, Evening, Day, Morning, Prince, Planet, Rose, Volcano, Breakfast;
     private ImageView imgDay, imgMorning, imgNight, imgEvening;
     private ConstraintLayout layoutMorning;
+    private ConstraintLayout layoutDay;
+    private ConstraintLayout layoutEvening;
+    private ConstraintLayout layoutNight;
 
-
+    private int Time = 1;
 
     //Hi privet
 
@@ -43,16 +47,26 @@ public class MainActivity extends AppCompatActivity {
         imgNight = (ImageView) findViewById(R.id.imgNight);
         imgEvening = (ImageView) findViewById(R.id.imgEvening);
         layoutMorning = (ConstraintLayout) findViewById(R.id.layoutMorning);
+        layoutDay = (ConstraintLayout) findViewById(R.id.layoutDay);
+        layoutEvening = (ConstraintLayout) findViewById(R.id.layoutEvening);
+        layoutNight = (ConstraintLayout) findViewById(R.id.layoutNight);
 
+        Prince = findViewById(R.id.Prince);
+        Planet = findViewById(R.id.Planet);
+        Rose = findViewById(R.id.Rose);
+        Volcano = findViewById(R.id.Volcano);
+        Breakfast = findViewById(R.id.Breakfast);
 
         Morning.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
                 layoutMorning.setVisibility(View.VISIBLE);
-                imgDay.setVisibility(View.INVISIBLE);
-                imgEvening.setVisibility(View.INVISIBLE);
-                imgNight.setVisibility(View.INVISIBLE);
+                layoutDay.setVisibility(View.INVISIBLE);
+                layoutEvening.setVisibility(View.INVISIBLE);
+                layoutNight.setVisibility(View.INVISIBLE);
+
+                Time = 1;
 
                 NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 String id = "my_channel_01";
@@ -71,34 +85,12 @@ public class MainActivity extends AppCompatActivity {
 
                 String CHANNEL_ID = "my_channel_01";
                 Notification notification = new Notification.Builder(MainActivity.this)
-                        .setContentTitle("")
-                        .setContentText("")
+                        .setContentTitle("Утро")
+                        .setContentText("Привести в порядок свою планету")
                         .setSmallIcon(R.drawable.clean)
                         .setChannelId(CHANNEL_ID)
                         .build();
                 mNotificationManager.notify(1, notification);
-
-
-//                Resources res = MainActivity.this.getResources();
-//                NotificationCompat.Builder mBuilder =
-//                        (NotificationCompat.Builder) new NotificationCompat.Builder(MainActivity.this)
-//                                .setSmallIcon(R.drawable.clean)
-//                                .setContentTitle("Колоколец")
-//                                .setContentText("Колоколец звонит")
-//                                .setAutoCancel(true)
-//                                .setLargeIcon(BitmapFactory.decodeResource(res, R.drawable.clean))
-//                                .setPriority(NotificationCompat.PRIORITY_HIGH)
-//                                .setChannelId(CHANNEL_ID)
-//                        ;
-//
-//                Intent resultIntent = new Intent(MainActivity.this, MainActivity.class);
-//
-//                android.app.TaskStackBuilder stackBuilder = TaskStackBuilder.create(MainActivity.this);
-//                stackBuilder.addParentStack(MainActivity.class);
-//                stackBuilder.addNextIntent(resultIntent);
-
-//                PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-//                mBuilder.setContentIntent(resultPendingIntent);
             }
         });
 
@@ -107,9 +99,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 layoutMorning.setVisibility(View.INVISIBLE);
-                imgDay.setVisibility(View.VISIBLE);
-                imgEvening.setVisibility(View.INVISIBLE);
-                imgNight.setVisibility(View.INVISIBLE);
+                layoutDay.setVisibility(View.VISIBLE);
+                layoutEvening.setVisibility(View.INVISIBLE);
+                layoutNight.setVisibility(View.INVISIBLE);
+
+                Time = 2;
 
                 NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 String id = "my_channel_01";
@@ -126,12 +120,12 @@ public class MainActivity extends AppCompatActivity {
 
                 String CHANNEL_ID = "my_channel_01";
                 Notification notification = new Notification.Builder(MainActivity.this)
-                        .setContentTitle("")
-                        .setContentText("")
-                        .setSmallIcon(R.drawable.clean)
+                        .setContentTitle("День")
+                        .setContentText("Полить розу")
+                        .setSmallIcon(R.drawable.rose)
                         .setChannelId(CHANNEL_ID)
                         .build();
-                mNotificationManager.notify(1, notification);
+                mNotificationManager.notify(2, notification);
             }
         });
 
@@ -140,9 +134,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 layoutMorning.setVisibility(View.INVISIBLE);
-                imgDay.setVisibility(View.INVISIBLE);
-                imgEvening.setVisibility(View.VISIBLE);
-                imgNight.setVisibility(View.INVISIBLE);
+                layoutDay.setVisibility(View.INVISIBLE);
+                layoutEvening.setVisibility(View.VISIBLE);
+                layoutNight.setVisibility(View.INVISIBLE);
+
+                Time = 3;
 
                 NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 String id = "my_channel_01";
@@ -159,12 +155,12 @@ public class MainActivity extends AppCompatActivity {
 
                 String CHANNEL_ID = "my_channel_01";
                 Notification notification = new Notification.Builder(MainActivity.this)
-                        .setContentTitle("")
-                        .setContentText("")
-                        .setSmallIcon(R.drawable.clean)
+                        .setContentTitle("Вечер")
+                        .setContentText("Укрыть розу ширмой")
+                        .setSmallIcon(R.drawable.cover)
                         .setChannelId(CHANNEL_ID)
                         .build();
-                mNotificationManager.notify(1, notification);
+                mNotificationManager.notify(3, notification);
             }
         });
 
@@ -173,9 +169,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 layoutMorning.setVisibility(View.INVISIBLE);
-                imgDay.setVisibility(View.INVISIBLE);
-                imgEvening.setVisibility(View.INVISIBLE);
-                imgNight.setVisibility(View.VISIBLE);
+                layoutDay.setVisibility(View.INVISIBLE);
+                layoutEvening.setVisibility(View.INVISIBLE);
+                layoutNight.setVisibility(View.VISIBLE);
+
+                Time = 4;
 
                 NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 String id = "my_channel_01";
@@ -192,12 +190,67 @@ public class MainActivity extends AppCompatActivity {
 
                 String CHANNEL_ID = "my_channel_01";
                 Notification notification = new Notification.Builder(MainActivity.this)
-                        .setContentTitle("")
-                        .setContentText("")
-                        .setSmallIcon(R.drawable.clean)
+                        .setContentTitle("Ночь")
+                        .setContentText("Любоваться закатом")
+                        .setSmallIcon(R.drawable.sun)
                         .setChannelId(CHANNEL_ID)
                         .build();
-                mNotificationManager.notify(1, notification);
+                mNotificationManager.notify(4, notification);
+            }
+        });
+
+        Prince.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (Time == 1){
+                    Toast.makeText(MainActivity.this, "Маленький принц", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Маленький принц со своей розой", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        
+        Planet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Астероид Б-612. Планета на которой живет Маленький принц", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Rose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (Time == 1){
+                    Toast.makeText(MainActivity.this, "Роза. Ее нужно поливать, а на ночь укрывать ширмой и колпаком", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Ростки баобабов. Их нужно убирать каждое утро", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        Breakfast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (Time == 1){
+                    Toast.makeText(MainActivity.this, "Действующий вулкан. На нем удобно разогревать завтрак", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Потухший вулкан. О нем тоже нужно заботиться", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        Volcano.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (Time == 1){
+                    Toast.makeText(MainActivity.this, "Потухший вулкан. О нем тоже нужно заботиться", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Действующий вулкан. На нем удобно разогревать завтрак", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

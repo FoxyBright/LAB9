@@ -80,36 +80,95 @@
                 android:id="@+id/imgMorning"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="visible"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:background="@drawable/morning"
                 android:contentDescription="@string/TODO" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageView
-            android:id="@+id/imgDay"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="invisible"
-            android:background="@drawable/day"
-            android:contentDescription="@string/TODO" />
+            android:visibility="invisible">
 
-        <ImageView
-            android:id="@+id/imgEvening"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="invisible"
-            android:background="@drawable/evening"
-            android:contentDescription="@string/TODO" />
+            <ImageView
+                android:id="@+id/imgDay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/day"
+                android:contentDescription="@string/TODO" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageView
-            android:id="@+id/imgNight"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutEvening"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="invisible"
-            android:background="@drawable/night"
-            android:contentDescription="@string/TODO" />
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/imgEvening"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/evening"
+                android:contentDescription="@string/TODO" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutNight"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/imgNight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/night"
+                android:contentDescription="@string/TODO" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/Breakfast"
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="320dp"
+            android:background="@android:color/transparent"
+            />
+        <Button
+            android:id="@+id/Planet"
+            android:layout_width="225dp"
+            android:layout_height="138dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="190dp"
+            android:background="@android:color/transparent"
+            />
+
+        <Button
+            android:id="@+id/Prince"
+            android:layout_width="200dp"
+            android:layout_height="192dp"
+            android:layout_marginLeft="60dp"
+            android:background="@android:color/transparent"
+            />
+
+        <Button
+            android:id="@+id/Volcano"
+            android:layout_width="115dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="130dp"
+            android:background="@android:color/transparent"
+            />
+
+        <Button
+            android:id="@+id/Rose"
+            android:layout_width="200dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="320dp"
+            android:layout_marginLeft="200dp"
+            android:background="@android:color/transparent"
+            />
 
     </FrameLayout>
 
