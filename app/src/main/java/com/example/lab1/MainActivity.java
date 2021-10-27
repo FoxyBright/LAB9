@@ -73,29 +73,29 @@ public class MainActivity extends AppCompatActivity implements SoundPool.OnLoadC
 
                 mSoundPool.play(mClapSound, 1,1,0,0,1);
 
-                NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                String id = "my_channel_01";
+//                NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+//                String id = "my_channel_01";
 
 
                 CharSequence name = getString(R.string.channel_name);
                 String description = getString(R.string.channel_description);
                 int importance = NotificationManager.IMPORTANCE_LOW;
-                NotificationChannel mChannel = new NotificationChannel(id, name,importance);
-                mChannel.setDescription(description);
+//                NotificationChannel mChannel = new NotificationChannel(id, name,importance);
+//                mChannel.setDescription(description);
 
-                mNotificationManager.createNotificationChannel(mChannel);
-
-                mNotificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-
-
-                String CHANNEL_ID = "my_channel_01";
-                Notification notification = new Notification.Builder(MainActivity.this)
-                        .setContentTitle("Утро")
-                        .setContentText("Привести в порядок свою планету")
-                        .setSmallIcon(R.drawable.clean)
-                        .setChannelId(CHANNEL_ID)
-                        .build();
-                mNotificationManager.notify(1, notification);
+//                mNotificationManager.createNotificationChannel(mChannel);
+//
+//                mNotificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+//
+//
+//                String CHANNEL_ID = "my_channel_01";
+//                Notification notification = new Notification.Builder(MainActivity.this)
+//                        .setContentTitle("Утро")
+//                        .setContentText("Привести в порядок свою планету")
+//                        .setSmallIcon(R.drawable.clean)
+//                        .setChannelId(CHANNEL_ID)
+//                        .build();
+//                mNotificationManager.notify(1, notification);
             }
         });
 
@@ -112,27 +112,27 @@ public class MainActivity extends AppCompatActivity implements SoundPool.OnLoadC
 
                 mSoundPool.play(mClapSound, 1,1,0,0,1);
 
-                NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                //NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 String id = "my_channel_01";
                 CharSequence name = getString(R.string.channel_name);
                 String description = getString(R.string.channel_description);
                 int importance = NotificationManager.IMPORTANCE_LOW;
-                NotificationChannel mChannel = new NotificationChannel(id, name,importance);
-                mChannel.setDescription(description);
+                //NotificationChannel mChannel = new NotificationChannel(id, name,importance);
+                //mChannel.setDescription(description);
 
-                mNotificationManager.createNotificationChannel(mChannel);
+                //mNotificationManager.createNotificationChannel(mChannel);
 
-                mNotificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+                //mNotificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
 
 
                 String CHANNEL_ID = "my_channel_01";
-                Notification notification = new Notification.Builder(MainActivity.this)
-                        .setContentTitle("День")
-                        .setContentText("Полить розу")
-                        .setSmallIcon(R.drawable.rose)
-                        .setChannelId(CHANNEL_ID)
-                        .build();
-                mNotificationManager.notify(2, notification);
+                //Notification notification = new Notification.Builder(MainActivity.this)
+                        //.setContentTitle("День")
+                        //.setContentText("Полить розу")
+                        //.setSmallIcon(R.drawable.rose)
+                        //.setChannelId(CHANNEL_ID)
+                        //.build();
+                //mNotificationManager.notify(2, notification);
             }
         });
 
@@ -149,27 +149,27 @@ public class MainActivity extends AppCompatActivity implements SoundPool.OnLoadC
 
                 mSoundPool.play(mClapSound, 1,1,0,0,1);
 
-                NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                //NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 String id = "my_channel_01";
                 CharSequence name = getString(R.string.channel_name);
                 String description = getString(R.string.channel_description);
                 int importance = NotificationManager.IMPORTANCE_LOW;
-                NotificationChannel mChannel = new NotificationChannel(id, name,importance);
-                mChannel.setDescription(description);
+                //NotificationChannel mChannel = new NotificationChannel(id, name,importance);
+                //mChannel.setDescription(description);
 
-                mNotificationManager.createNotificationChannel(mChannel);
+                //mNotificationManager.createNotificationChannel(mChannel);
 
-                mNotificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+                //mNotificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
 
 
                 String CHANNEL_ID = "my_channel_01";
-                Notification notification = new Notification.Builder(MainActivity.this)
-                        .setContentTitle("Вечер")
-                        .setContentText("Укрыть розу ширмой")
-                        .setSmallIcon(R.drawable.cover)
-                        .setChannelId(CHANNEL_ID)
-                        .build();
-                mNotificationManager.notify(3, notification);
+                //Notification notification = new Notification.Builder(MainActivity.this)
+//                        .setContentTitle("Вечер")
+//                        .setContentText("Укрыть розу ширмой")
+//                        .setSmallIcon(R.drawable.cover)
+//                        .setChannelId(CHANNEL_ID)
+//                        .build();
+                //mNotificationManager.notify(3, notification);
             }
         });
 
@@ -186,27 +186,27 @@ public class MainActivity extends AppCompatActivity implements SoundPool.OnLoadC
 
                 mSoundPool.play(mClapSound, 1,1,0,0,1);
 
-                NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+//                NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 String id = "my_channel_01";
                 CharSequence name = getString(R.string.channel_name);
                 String description = getString(R.string.channel_description);
                 int importance = NotificationManager.IMPORTANCE_LOW;
-                NotificationChannel mChannel = new NotificationChannel(id, name,importance);
-                mChannel.setDescription(description);
-
-                mNotificationManager.createNotificationChannel(mChannel);
-
-                mNotificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-
-
-                String CHANNEL_ID = "my_channel_01";
-                Notification notification = new Notification.Builder(MainActivity.this)
-                        .setContentTitle("Ночь")
-                        .setContentText("Любоваться закатом")
-                        .setSmallIcon(R.drawable.sun)
-                        .setChannelId(CHANNEL_ID)
-                        .build();
-                mNotificationManager.notify(4, notification);
+//                NotificationChannel mChannel = new NotificationChannel(id, name,importance);
+//                mChannel.setDescription(description);
+//
+//                mNotificationManager.createNotificationChannel(mChannel);
+//
+//                mNotificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+//
+//
+//                String CHANNEL_ID = "my_channel_01";
+//                Notification notification = new Notification.Builder(MainActivity.this)
+//                        .setContentTitle("Ночь")
+//                        .setContentText("Любоваться закатом")
+//                        .setSmallIcon(R.drawable.sun)
+//                        .setChannelId(CHANNEL_ID)
+//                        .build();
+//                mNotificationManager.notify(4, notification);
             }
         });
 
